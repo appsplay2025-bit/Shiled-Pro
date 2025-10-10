@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>دانلود نسخه جدید Shield VPN</title>
+  <title>Shield VPN Download</title>
   <style>
     body {
       margin: 0;
@@ -11,6 +11,7 @@
       background: linear-gradient(180deg, #e9f3ff 0%, #ffffff 100%);
       text-align: center;
       direction: rtl;
+      transition: 0.3s ease;
     }
 
     .container {
@@ -95,11 +96,31 @@
       font-size: 13px;
       color: #777;
     }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #0b76ef;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.2s;
+    }
+
+    .lang-switch:hover {
+      background: #095ec0;
+    }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <button class="lang-switch" onclick="toggleLanguage()">English</button>
+
+  <div class="container" id="content-fa">
     <img src="icon.jpeg" alt="Shield VPN Icon" class="logo">
     <h1>🚀 نسخهٔ جدید Shield VPN آمادهٔ دانلود است!</h1>
     <p class="description">
@@ -118,10 +139,49 @@
       <a href="vpn-latest.apk" class="btn-main">⬇️ دانلود مستقیم</a>
     </div>
 
-    <footer>
-      برای نصب، فایل را دانلود کرده و روی دستگاه خود اجرا کنید.<br>
-      © 2025 Shield VPN — All Rights Reserved
-    </footer>
+    <footer>برای نصب، فایل را دانلود کرده و روی دستگاه خود اجرا کنید.<br>© 2025 Shield VPN</footer>
   </div>
+
+  <div class="container" id="content-en" style="display:none;" dir="ltr">
+    <img src="icon.jpeg" alt="Shield VPN Icon" class="logo">
+    <h1>🚀 The new version of Shield VPN is ready to download!</h1>
+    <p class="description">
+      A completely free version with more servers and ultra-fast speed that takes your connection experience to a new level.
+    </p>
+
+    <ul style="text-align:left;">
+      <li>Access multiple servers without geo-restrictions 🌍</li>
+      <li>Enjoy high-speed and stable browsing ⚡</li>
+      <li>Completely free — no payment required 💎</li>
+    </ul>
+
+    <div class="buttons">
+      <a href="https://galaxystore.samsung.com/detail/com.aurora.shiledVPNPremium" target="_blank" class="btn-secondary">📱 Download from Galaxy Store</a>
+      <a href="https://t.me/sheildvpn1" target="_blank" class="btn-secondary">💬 Download from Telegram</a>
+      <a href="vpn-latest.apk" class="btn-main">⬇️ Direct Download</a>
+    </div>
+
+    <footer>Download the file and install it on your device.<br>© 2025 Shield VPN</footer>
+  </div>
+
+  <script>
+    function toggleLanguage() {
+      const fa = document.getElementById("content-fa");
+      const en = document.getElementById("content-en");
+      const btn = document.querySelector(".lang-switch");
+
+      if (fa.style.display === "none") {
+        fa.style.display = "block";
+        en.style.display = "none";
+        btn.textContent = "English";
+        document.body.setAttribute("dir", "rtl");
+      } else {
+        fa.style.display = "none";
+        en.style.display = "block";
+        btn.textContent = "فارسی";
+        document.body.setAttribute("dir", "ltr");
+      }
+    }
+  </script>
 </body>
 </html>
